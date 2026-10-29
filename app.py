@@ -5,8 +5,7 @@ from io import BytesIO
 
 from core.excel_reader import read_excel_schema
 from core.generators import basic_python
-from core.generators import basic_python, data_analysis
-#  from core.generators import data_analysis, machine_learning # بعداً اضافه میشن
+from core.generators import basic_python, data_analysis, machine_learning
 
 # ---------- تنظیمات صفحه ----------
 st.set_page_config(
@@ -106,8 +105,8 @@ def render_sections(sections, key_prefix):
 # ---------- تب‌ها ----------
 tab1, tab2, tab3 = st.tabs([
     "🐍 پایتون پایه",
-    "📊 تحلیل داده (به‌زودی)",
-    "🤖 یادگیری ماشین (به‌زودی)",
+    "📊 تحلیل داده ",
+    "🤖 یادگیری ماشین ",
 ])
 
 with tab1:
@@ -127,4 +126,18 @@ with tab2:
     render_sections(sections_eda, "eda")
 
 with tab3:
-    st.info("این بخش در فازهای بعدی تکمیل می‌شود.")
+    st.markdown(
+        "کد آموزش مدل با `scikit-learn`: Pipeline پیش‌پردازش، "
+        "مدل، ارزیابی و ذخیره. نوع مسئله (طبقه‌بندی/رگرسیون) خودکار تشخیص داده می‌شود."
+    )
+    
+    # یک منوی کشویی برای اینکه کاربر ستون هدف رو انتخاب کنه
+    target_col = st.selectbox(
+        "🎯 ستون هدف (Target) را انتخاب کنید:",
+        options=[c.name for c in schema.columns],
+        help="ستونی که می‌خواهید مدل آن را پیش‌بینی کند."
+    )
+    
+    if target_col:
+        sections_ml = machine_learning.generate(schema, target_col)
+        render_sections(sections_ml, "ml")
