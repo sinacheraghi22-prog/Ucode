@@ -5,7 +5,8 @@ from io import BytesIO
 
 from core.excel_reader import read_excel_schema
 from core.generators import basic_python
-# from core.generators import data_analysis, machine_learning # بعداً اضافه میشن
+from core.generators import basic_python, data_analysis
+#  from core.generators import data_analysis, machine_learning # بعداً اضافه میشن
 
 # ---------- تنظیمات صفحه ----------
 st.set_page_config(
@@ -118,7 +119,12 @@ with tab1:
     render_sections(sections, "basic")
 
 with tab2:
-    st.info("این بخش در فازهای بعدی تکمیل می‌شود.")
+    st.markdown(
+        "کد تحلیل اکتشافی با `pandas` و `seaborn`: "
+        "آمار توصیفی، مقدار گمشده، توزیع، همبستگی و تمیزکاری."
+    )
+    sections_eda = data_analysis.generate(schema)
+    render_sections(sections_eda, "eda")
 
 with tab3:
     st.info("این بخش در فازهای بعدی تکمیل می‌شود.")
