@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Streamlit secrets & config
+.streamlit/secrets.toml
+
+# Generated files (خروجی‌های برنامه)
+*.pkl
+*.pt
+*.png
+*.csv
+!data/*.csv
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Misc
+*.log
+.env
