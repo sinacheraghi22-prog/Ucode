@@ -14,7 +14,7 @@ def generate(schema: ExcelSchema) -> List[Dict]:
     """خروجی: لیستی از بخش‌ها، هر بخش شامل title, code, explanation."""
     num_col, cat_col = _pick_columns(schema)
     
-    # پیدا کردن نمونه‌ی واقعی از داده‌ها برای استفاده در کد (اگه وجود داشته باشه)
+    
     cat_sample = "مقدار_مورد_نظر"
     cat_info = schema.get(cat_col)
     if cat_info and cat_info.samples:
