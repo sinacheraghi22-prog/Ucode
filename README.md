@@ -5,6 +5,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+> 🌐 **دموی زنده:** [luminous-fenglisu-fbd1a8.netlify.app](https://luminous-fenglisu-fbd1a8.netlify.app)
 
 ## ✨ ویژگی‌ها
 
