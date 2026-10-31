@@ -14,7 +14,7 @@ st.set_page_config(
     layout="wide",
 )
 
-# RTL ساده (کدها LTR می‌مانند)
+
 st.markdown(
     """
     <style>
@@ -45,7 +45,7 @@ if uploaded is None:
     st.info("👉 برای شروع، یک فایل اکسل آپلود کنید.")
     st.stop()
 
-# خواندن بایت‌ها (چون file pointer بعداً مصرف می‌شود)
+
 raw = uploaded.getvalue()
 
 # ---------- تشخیص ساختار ----------
