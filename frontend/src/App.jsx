@@ -30,7 +30,7 @@ export default function App() {
     if (target) formData.append('target_col', target);
 
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/generate', formData);
+      const res = await axios.post('https://ucode-fyvp.onrender.com/api/generate', formData);
       setData(res.data);
       if (res.data.schema.columns.length > 0 && !target) {
         setTargetCol(res.data.schema.columns[0].name); // پیش‌فرض برای ML
